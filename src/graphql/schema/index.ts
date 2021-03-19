@@ -1,18 +1,16 @@
 import { gql } from "apollo-server";
 
 const typeDefs = gql`
-  scalar date
-
   type Query {
-    cafeterias: [Cafeteria]
-    cafeteria(name: String, date: date): Cafeteria
+    cafeterias: [Cafeteria!]!
+    cafeteria(name: String!, date: String!): Cafeteria!
   }
 
   type Cafeteria {
-    _id: ID
-    date: date
-    type: Boolean
-    name: String
+    _id: ID!
+    date: String!
+    type: Boolean!
+    name: String!
     breakfast: String
     lunch: String
     dinner: String

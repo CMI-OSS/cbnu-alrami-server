@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const cafeteriaSchema = new Schema({
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
   type: {
@@ -15,15 +15,15 @@ const cafeteriaSchema = new Schema({
   },
   breakfast: {
     type: String,
-    required: true,
+    required: false,
   },
   lunch: {
     type: String,
-    required: true,
+    required: false,
   },
   dinner: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
