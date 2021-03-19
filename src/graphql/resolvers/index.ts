@@ -22,7 +22,7 @@ const resolvers = {
           restaurants = await Restaurant.find();
           return restaurants;
         }
-        restaurants = await Restaurant.findOne({
+        restaurants = await Restaurant.find({
           location: args.location,
         });
         return restaurants;

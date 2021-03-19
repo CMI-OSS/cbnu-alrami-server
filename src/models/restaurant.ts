@@ -33,7 +33,7 @@ const restaurantSchema = new Schema({
     required: false,
   },
   detail: {
-    type: restaurantDetailSchema,
+    type: [restaurantDetailSchema],
     required: false,
   },
   time: {

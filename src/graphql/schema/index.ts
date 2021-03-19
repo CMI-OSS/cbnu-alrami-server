@@ -30,7 +30,7 @@ const typeDefs = gql`
     latitude: Float!
     longitude: Float!
     name: String!
-    detail: RestaurantDetail!
+    detail: [RestaurantDetail!]!
     time: String!
     break: String!
   }
