@@ -32,7 +32,7 @@ const restaurantSchema = new Schema({
     type: String,
     required: false,
   },
-  detail: {
+  details: {
     type: [restaurantDetailSchema],
     required: false,
   },
