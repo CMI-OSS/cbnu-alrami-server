@@ -49,7 +49,6 @@ const resolvers = {
         const regDate = new RegExp(
           `${args.year}-${args.month <= 9 ? "0" + args.month : args.month}`
         );
-        console.log(regDate);
         const schedule = await Schedule.find({
           $or: [{ start_date: regDate }, { end_date: regDate }],
         });
