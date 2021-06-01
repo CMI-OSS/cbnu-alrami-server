@@ -1,5 +1,6 @@
 import Cafeteria from "../../models/cafeteria";
 import Restaurant from "../../models/restaurant";
+import Schedule from "../../models/schedule";
 
 const resolvers = {
   Query: {
@@ -38,6 +39,21 @@ const resolvers = {
           name: args.name,
         });
         return restaurant;
+      } catch (err) {
+        console.log(err);
+        throw err;
+      }
+    },
+    async schedule(_, args) {
+      try {
+        const regDate = new RegExp(
+          `${args.year}-${args.month <= 9 ? "0" + args.month : args.month}`
+        );
+        console.log(regDate);
+        const schedule = await Schedule.find({
+          $or: [{ start_date: regDate }, { end_date: regDate }],
+        });
+        return schedule;
       } catch (err) {
         console.log(err);
         throw err;
