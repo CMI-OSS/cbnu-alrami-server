@@ -6,6 +6,7 @@ const typeDefs = gql`
     cafeteria(name: String!, date: String!): Cafeteria!
     restaurants(location: String): [Restaurant!]!
     restaurant(location: String!, name: String!): Restaurant!
+    schedule(year: Int!, month: Int!): [Schedule]
   }
 
   type Cafeteria {
@@ -33,6 +34,13 @@ const typeDefs = gql`
     details: [RestaurantDetail!]!
     time: String!
     break: String!
+  }
+
+  type Schedule {
+    _id: ID!
+    start_date: String!
+    end_date: String
+    content: String!
   }
 `;
 

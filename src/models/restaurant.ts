@@ -3,11 +3,11 @@ import { Schema, model } from "mongoose";
 const restaurantDetailSchema = new Schema({
   menu: {
     type: String,
-    required: false,
+    required: true,
   },
   price: {
     type: Number,
-    required: false,
+    required: true,
   },
 });
 
@@ -18,31 +18,31 @@ const restaurantSchema = new Schema({
   },
   address: {
     type: String,
-    required: false,
+    required: true,
   },
   latitude: {
     type: Number,
-    required: false,
+    required: true,
   },
   longitude: {
     type: Number,
-    required: false,
+    required: true,
   },
   name: {
     type: String,
-    required: false,
+    required: true,
   },
   details: {
     type: [restaurantDetailSchema],
-    required: false,
+    required: true,
   },
   time: {
     type: String,
-    required: false,
+    required: true,
   },
   break: {
     type: String,
-    required: false,
+    required: true,
   },
 });
 
